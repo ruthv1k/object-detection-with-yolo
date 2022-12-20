@@ -12,6 +12,7 @@ A minor project on real time object detection using YOLO algorithm
 ## Setup
 
 -   pip install -r requirements.txt
+-   Download the config and weight files from the links below and place them inside `models/` folder
 -   python main.py
 
 ## Model Info
