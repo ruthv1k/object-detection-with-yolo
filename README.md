@@ -29,7 +29,6 @@ A minor project on real time object detection using YOLO algorithm
 
 ## Improvements to be made
 
--   A seperate window has to be opened to show the objects detected
 -   Bounding boxes should be coloured differently for different classes identified
 
 # References
