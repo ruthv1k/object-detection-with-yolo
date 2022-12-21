@@ -7,7 +7,7 @@ Description: This source code implements real-time object detection using the YO
 import threading
 import time
 import tkinter as tk
-from tkinter import filedialog
+from tkinter import filedialog, Toplevel
 
 import cv2
 import numpy as np
@@ -17,7 +17,7 @@ from helpers import (draw_bounding_boxes,
                      get_confidence_and_detection_coordinates)
 
 root = tk.Tk()
-root.geometry("800x600")
+root.geometry("400x300")
 root.title("Object Detection")
 
 capture = cv2.VideoCapture(0)
@@ -31,7 +31,12 @@ frame.pack()
 
 def detect_objects():
     try:
-        real_time_video_label = tk.Label(frame)
+        detect_objects_window = Toplevel(root)
+        detect_objects_window.title("Real Time Object Detection Using Camera")
+        detect_objects_window.geometry("600x500")
+        detect_objects_window.attributes('-topmost', True)
+
+        real_time_video_label = tk.Label(detect_objects_window)
         real_time_video_label.pack()
 
         while True:
@@ -40,10 +45,6 @@ def detect_objects():
                 break
 
             height, width, _ = captured_frame.shape
-
-            key = cv2.waitKey(1) & 0xFF
-            if key == 27:
-                break
 
             blob = cv2.dnn.blobFromImage(
                 captured_frame, 1 / 255.0, (416, 416), swapRB=True, crop=False
@@ -70,10 +71,17 @@ def detect_objects():
 
 def upload_image():
     try:
-        image_label = tk.Label(frame)
+        image_window = Toplevel(root)
+        image_window.title("Object Detection In An Image")
+        image_window.geometry("600x500")
+
+        image_label = tk.Label(image_window)
         image_label.pack()
 
         file_path = filedialog.askopenfilename()
+
+        if file_path:
+            image_window.attributes('-topmost', True)
 
         image = cv2.imread(file_path)
         image = cv2.resize(image, (416, 416))
@@ -104,10 +112,17 @@ def upload_image():
 
 def upload_video():
     try:
-        video_label = tk.Label(frame)
+        video_window = Toplevel(root)
+        video_window.title("Object Detection In A Video")
+        video_window.geometry("600x500")
+
+        video_label = tk.Label(video_window)
         video_label.pack()
 
         file_path = filedialog.askopenfilename()
+
+        if file_path:
+            video_window.attributes('-topmost', True)
 
         capture = cv2.VideoCapture(file_path)
 
@@ -167,7 +182,8 @@ video_upload_button = tk.Button(
     frame, text="Upload Video", command=upload_video)
 video_upload_button.pack(pady=16)
 
-button = tk.Button(frame, text="Start Detection", command=start_detection)
-button.pack(pady=16)
+real_time_object_detection_button = tk.Button(
+    frame, text="Start Camera", command=start_detection)
+real_time_object_detection_button.pack(pady=16)
 
 root.mainloop()
