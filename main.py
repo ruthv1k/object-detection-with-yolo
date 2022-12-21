@@ -39,7 +39,7 @@ def detect_objects():
             if captured_frame is None:
                 break
 
-            height, width = captured_frame.shape
+            height, width, _ = captured_frame.shape
 
             key = cv2.waitKey(1) & 0xFF
             if key == 27:
