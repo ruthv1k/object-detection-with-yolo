@@ -21,11 +21,14 @@ A minor project on real time object detection using YOLO algorithm
 -   Config: https://github.com/pjreddie/darknet/blob/master/cfg/yolov3.cfg
 -   Weights: https://pjreddie.com/media/files/yolov3.weights
 
+## Screenshots
+![image](https://user-images.githubusercontent.com/91245898/208859393-9813086c-a9c2-43a4-b6d0-cdacfb50bde1.png)
+
 ## Known Issues
 
--   Window has to be closed after clicking any key or Esc key
+-   GUI Window doesn't close after clicking any key / Esc key
 -   Close objects or small objects detection may not be accurate
--   Limited number of classes are identified
+-   Limited number of classes (80) are identified
 
 ## Improvements to be made
 
