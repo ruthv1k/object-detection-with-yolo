@@ -11,8 +11,9 @@ A minor project on real time object detection using YOLO algorithm
 
 ## Setup
 
+-   Make sure you have python > 3.7 installed
 -   pip install -r requirements.txt
--   Download the config and weight files from the links below and place them inside `models/` folder
+-   Download the config and weight files from the links below and place them inside `model/` folder and name them as `yolov3.cfg` and `yolov3.weights` respectively
 -   python main.py
 
 ## Model Info
