@@ -23,7 +23,9 @@ A minor project on real time object detection using YOLO algorithm
 -   Weights: https://pjreddie.com/media/files/yolov3.weights
 
 ## Screenshots
-![image](https://user-images.githubusercontent.com/91245898/208859393-9813086c-a9c2-43a4-b6d0-cdacfb50bde1.png)
+<img src="https://user-images.githubusercontent.com/91245898/209361315-eabef929-0c19-4c71-963b-47a98db2d5a0.png" width="300px" />
+<br />
+<img src="https://user-images.githubusercontent.com/91245898/208859393-9813086c-a9c2-43a4-b6d0-cdacfb50bde1.png" width="500px" />
 
 ## Known Issues
 
